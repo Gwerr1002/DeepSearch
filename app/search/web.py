@@ -1,5 +1,5 @@
 import httpx
-import fitz
+import pymupdf
 from bs4 import BeautifulSoup
 
 def clean_text(soup):
@@ -50,13 +50,12 @@ def fetch(url):
         follow_redirects=True,
         timeout=30,
     )
-    print(response)
     #
     response.raise_for_status()
     content_type = response.headers.get("content-type", "").lower()
     #
     if "application/pdf" in content_type:
-        document = fitz.open(
+        document = pymupdf.open(
             stream=response.content,
             filetype="pdf"
         )

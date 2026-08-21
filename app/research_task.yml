@@ -1,0 +1,29 @@
+# Busqueda o tarea a investigar
+research_task: >
+  Busca artículos científicos que contengan información sobre
+  el comportamiento de los exponentes de escalamiento obtenidos
+  mediante DFA sobre las series de magnitud y signo de los intervalos RR.
+
+# Palabras clave que debe contener los sitios de mayor a menor importancia
+keywords:
+  - magnitude
+  - sign
+  - RR intervals
+  - detrended fluctuation analysis
+  - DFA
+
+search:
+  # Cantidad máxima de fuentes
+  max_results: 20
+  # Cantidad máxima de fuentes relevantes por búsqueda
+  max_relevant_sources_per_iteration : 5
+  # Cantidad máxima de queries evaluados
+  max_queries: 3
+
+evaluations:
+  # Umbral de score de relevancia
+  threshold_socre_eval: 0.8
+  # Umbral de score de palabras clave
+  threshold_score_keywords : 0.8
+  # Cantidad mínima necesaria de fuentes con que superan threshold_score_keywords
+  min_keyword_score_sources : 3

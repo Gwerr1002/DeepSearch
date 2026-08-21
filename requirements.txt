@@ -3,3 +3,6 @@ fastapi
 uvicorn
 beautifulsoup4
 PyMuPDF
+numpy
+transformers
+pyyaml

@@ -59,3 +59,79 @@
                     │       Ollama / Qwen3       │
                     │        localhost:11434     │
                     └────────────────────────────┘
+
+=====================================================================================
+USER QUESTION
+      │
+      ▼
+┌──────────────────────┐
+│ 1. QUESTION ANALYZER │
+│                      │
+│ concepts             │
+│ relationships        │
+│ requested quantities │
+│ constraints          │
+│ answer target        │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ 2. QUERY GENERATOR   │
+│                      │
+│ English query        │
+│ preserves concepts   │
+└──────────┬───────────┘
+           │
+           ▼
+       SearXNG
+           │
+           ▼
+┌──────────────────────┐
+│ 3. RESULT EVALUATOR  │
+│                      │
+│ title                │
+│ content              │
+│ source               │
+│ relevance            │
+└──────────┬───────────┘
+           │
+       max 3 URLs
+           │
+           ▼
+┌──────────────────────┐
+│ 4. SOURCE READER     │
+│                      │
+│ open URL             │
+│ validate content     │
+│ extract evidence     │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ 5. EVIDENCE ANALYZER │
+│                      │
+│ Does evidence answer │
+│ the ORIGINAL question│
+│ specifically?        │
+└──────────┬───────────┘
+           │
+       ┌───┴───┐
+      YES      NO
+       │        │
+       │        ▼
+       │   New query
+       │        │
+       │        └───────┐
+       │                │
+       ▼                ▼
+┌──────────────────────────┐
+│ 6. ANSWER GENERATOR      │
+│                          │
+│ original language        │
+│ evidence-based           │
+│ citations                │
+│ requested structure      │
+└────────────┬─────────────┘
+             │
+             ▼
+      FINAL VALIDATION

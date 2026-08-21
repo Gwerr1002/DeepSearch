@@ -3,14 +3,26 @@ services:
   research-agent:
     build: .
     container_name: research-agent
+
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
     ports:
       - "8000:8000"
+
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+
   searxng:
-      image: searxng/searxng:latest
-      container_name: searxng
-      ports:
-        - "8080:8080"
-      volumes:
-        - ./searxng/settings.yml:/etc/searxng/settings.yml:ro
+    image: searxng/searxng:latest
+    container_name: searxng
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ./searxng/settings.yml:/etc/searxng/settings.yml:ro
+
+
+volumes:
+  huggingface_cache:

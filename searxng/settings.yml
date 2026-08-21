@@ -8,3 +8,5 @@ search:
 server:
   secret_key: "research-agent-secret-key"
   limiter: false
+
+default_doi_resolver: "oadoi.org"

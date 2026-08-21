@@ -1,5 +1,0 @@
-Ejecutar python:
-    >> docker run -it --rm research-python:latest python
-
-COmenzar imagen docker
-    >> docker start searxng

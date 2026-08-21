@@ -21,7 +21,11 @@ def generate(prompt: str) -> str:
     #
     return response.json()["response"]
 
-def chat(messages: list, tools: list | None = None):
+def chat(
+    messages: list,
+    tools: list | None = None,
+    format: str | dict | None = None,
+    ):
     #
     payload = {
         "model": MODEL,
@@ -31,6 +35,8 @@ def chat(messages: list, tools: list | None = None):
     #
     if tools:
         payload["tools"] = tools
+    if format:
+        payload["format"] = format
     #
     response = httpx.post(
         f"{OLLAMA_URL}/api/chat",
