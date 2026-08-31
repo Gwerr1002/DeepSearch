@@ -1,0 +1,663 @@
+The optimal fiducial points for pulse rate variability (PRV) analysis using photoplethysmography (PPG) signals include the middle-amplitude point (nM), apex point of the first derivative (nA), and tangent intersection point (nT). These points demonstrate the lowest relative errors between PRV and heart rate variability (HRV) indices, higher correlation coefficients, and improved reliability [1,12]. Forehead PPG signals were found to provide more reliable PRV assessments compared to finger PPG, likely due to differences in PPG morphology [12]. The medium interpolate point, a newly proposed fiducial point, also showed high accuracy under varying PPG morphologies and sensor locations, particularly when sampling rates were reduced to 50 Hz without significant loss of time and frequency domain indices [7].  
+
+Power spectral density (PSD) analysis plays a critical role in evaluating PRV, as studies highlight its utility in assessing spectral characteristics of PPG-derived intervals. For example, spectral analysis techniques were employed to compare PRV indices with HRV, revealing that fiducial points like nM and nA significantly reduce errors in spectral estimates [5,7]. Additionally, the temporal intervals between fiducial points, such as the apex and foot of the PPG waveform, were analyzed using PSD to quantify variability, with the middle-amplitude point showing superior performance in maintaining accuracy across different sampling rates [7,9]. These findings underscore the importance of aligning fiducial point selection with spectral analysis to enhance PRV assessment reliability.  
+
+The accuracy of PRV analysis also depends on algorithmic and signal processing factors. Studies emphasize that the choice of fiducial points and interbeat interval (IBI) detection algorithms significantly affects PRV results. For instance, valley-based detection methods for IBIs showed consistent performance across various spectral indices, while higher sampling rates (e.g., 128 Hz) improved PRV metrics like RMSSD and SD1/SD2 [7]. Furthermore, the use of derivative waveforms and clustering analysis helped identify 12 reliable markers for fiducial point detection, though their direct application to PSD analysis of intervals remains less explored [10]. These insights highlight the need for standardized protocols to ensure consistent PRV evaluation across diverse PPG acquisition settings.  
+
+References:  
+[1] Elena Peralta, J. Lázaro, R. Bailón, et al., "Optimal Fiducial Points for Pulse Rate Variability Analysis from Forehead and Finger PPG Signals," *Zaguan UNIZAR*, 2021. URL: https://zaguan.unizar.es/record/86512/files/texto_completo.pdf  
+[2] M. Peláez-Coca, Alberto Hernando, J. Lázaro, et al., "Impact of the PPG Sampling Rate in the Pulse Rate Variability Indices Evaluating Several Fiducial Points in Different Pulse Waveforms," *IEEE Journal of Biomedical and Health Informatics*, 2021. URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9495237  
+[3] Elisa Mejía‐Mejía, James M. May, P. A. Kyriacou, "Effects of using different algorithms and fiducial points for the detection of interbeat intervals," *Computers in Biology and Medicine*, 2022. DOI: 10.1016/j.cmpb.2022.106724  
+[4] Tianmin Kong, Ava Hedayatipour, "A Robust PPG Signal Processing Pipeline for Biomarker Extraction and Analysis," *2025 IEEE Dallas Circuits and Systems Conference (DCAS)*, 2025. DOI: 10.1109/DCAS65331.2025.11045453  
+[5] "Spectral analysis for pulse rate variability assessment from PPG signals," *PMC*, 2022. URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC9780434/  
+[6] "Heart Rate Variability from Wearable Photoplethysmography Systems," *MDPI*, 2022. URL: https://www.mdpi.com/1424-8220/22/8/2891  
+[7] "Optimal fiducial points for pulse rate variability analysis from forehead and finger photoplethysmographic signals," *PubMed*, 2019. URL: https://pubmed.ncbi.nlm.nih.gov/30669123/  
+[8] "Impact of the PPG Sampling Rate in the Pulse Rate Variability Indices Evaluating Several Fiducial Points in Different Pulse Waveforms," *PubMed*, 2021. URL: https://pubmed.ncbi.nlm.nih.gov/34310329/  
+[9] "Analysis on Four Derivative Waveforms of Photoplethysmogram (PPG) for Fiducial Point Detection," *Academia.edu*, 2022. URL: https://www.academia.edu/127420426/Analysis_on_Four_Derivative_Waveforms_of_Photoplethysmogram_PPG_for_Fiducial_Point_Detection  
+[10] "Prediction of ECG fiducial parameters from PPG signals for the analysis of heart rate variability," *ScienceDirect*, 2023. URL: https://www.sciencedirect.com/science/article/abs/pii/S1746809423012715  
+[11] "Essential Feature Extraction of Photoplethysmography Signal of Men and Women in Their 20s," *ResearchGate*, 2023. URL: https://www.researchgate.net/publication/319217053_Essential_Feature_Extraction_of_Photoplethysmography_Signal_of_Men_and_Women_in_Their_20s  
+[12] "Signal Quality Assessment and Reconstruction of PPG-Derived Signals for Heart Rate and Variability Estimation in In-Vehicle Applications," *PMC*, 2023. URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC12736534/
+
+
+
+
+[
+    {
+        "web_info": {
+            "template": "default.html",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12736534/",
+            "title": "Signal Quality Assessment and Reconstruction of PPG-Derived Signals for Heart Rate and Variability Estimation in In-Vehicle Applications: A Comparative Review and Empirical Validation - PMC",
+            "content": "The primary aim of this study is to (1) assess the accuracy of PPG-derived HR and HRV estimates under dynamic, in-vehicle conditions, and determine which parameters can reliably serve as surrogates for ECG-derived features; (2) evaluate the effectiveness of various signal processing techniques, including signal quality thresholding, spectral reconstruction, and fiducial point detection, in recovering and improving PPG-derived metrics with respect to ECG references; and (3) explore trade-offs between maximizing useable data and preserving signal fidelity, and offer practical recommendations for the design and deployment of PPG signal processing pipelines in ecologically valid, real-world applications. A total of 114 trials (57 women and 57 men) were included for the current analysis.",
+            "publishedDate": null,
+            "thumbnail": "",
+            "engine": "brave",
+            "parsed_url": [
+                "https",
+                "pmc.ncbi.nlm.nih.gov",
+                "/articles/PMC12736534/",
+                "",
+                "",
+                ""
+            ],
+            "img_src": "",
+            "priority": "",
+            "engines": [
+                "brave"
+            ],
+            "positions": [
+                17
+            ],
+            "score": 1.0,
+            "category": "general",
+            "relevance": "high",
+            "reason": "Directly addresses PPG signal analysis using power spectral density (PSD) and fiducial point detection. Explicitly mentions signal processing techniques for HR and HRV estimation, which involves analyzing intervals between fiducial points."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "url": "https://www.researchgate.net/figure/A-sample-PPG-signal-and-its-characteristic-points_fig1_299593684",
+            "title": "A sample PPG signal and its characteristic points. | Download Scientific Diagram",
+            "content": "The analysis modules include stationary and time-varying power spectral analyses, moving-correlation analysis and univariate analyses. Analyses can also be performed in batch mode if multiple datasets have to be processed in the same way. The program exports results in standard CSV format. McDAPS runs in MATLAB, and is supported on MS Windows and MAC OS systems. The MATLAB source code is available at https://github.com/thuptimd/McDAPS.git. ... ... HR on wearable devices is usually measured using a photoplethysmography (PPG) sensor, which is the most common sensor after the accelerometer in consumer wrist-worn wearables [118]. A simple peak detection algorithm can be used to extract the heart rate from a raw PPG signal; the peak-to-peak waveform represents 1 cardiac cycle ( Figure 23)",
+            "publishedDate": null,
+            "thumbnail": "https://imgs.search.brave.com/LpkJqUCLecLKDKdmeZ3hXQPx1c_D-JPwQM1qlKjLRrs/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/cmVzZWFyY2hnYXRl/Lm5ldC9wdWJsaWNh/dGlvbi8yOTk1OTM2/ODQvZmlndXJlL2Zp/ZzEvQVM6MzUwNTUw/MzM3MDQ4NTc2QDE0/NjA1ODkxMjEzMzIv/QS1zYW1wbGUtUFBH/LXNpZ25hbC1hbmQt/aXRzLWNoYXJhY3Rl/cmlzdGljLXBvaW50/cy5wbmc",
+            "engine": "brave",
+            "parsed_url": [
+                "https",
+                "www.researchgate.net",
+                "/figure/A-sample-PPG-signal-and-its-characteristic-points_fig1_299593684",
+                "",
+                "",
+                ""
+            ],
+            "img_src": "",
+            "priority": "",
+            "engines": [
+                "brave"
+            ],
+            "positions": [
+                2
+            ],
+            "score": 0.75,
+            "category": "general",
+            "relevance": "medium",
+            "reason": "Discusses PPG signal analysis with power spectral density (PSD) and mentions characteristic points. While not explicitly about intervals between fiducial points, it includes peak detection algorithms relevant to temporal analysis."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "title": "(PDF) Essential Feature Extraction of Photoplethysmography Signal of ...",
+            "content": "This study aims to extract the essential features of Photoplethysmography (PPG) signal of men and women in healthy subjects using Power Spectral Density (PSD) and Detrended Fluctuation Analysis ...",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "duckduckgo"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                7
+            ],
+            "score": 0.75,
+            "category": "general",
+            "url": "https://www.researchgate.net/publication/319217053_Essential_Feature_Extraction_of_Photoplethysmography_Signal_of_Men_and_Women_in_Their_20s",
+            "engine": "duckduckgo",
+            "parsed_url": [
+                "https",
+                "www.researchgate.net",
+                "/publication/319217053_Essential_Feature_Extraction_of_Photoplethysmography_Signal_of_Men_and_Women_in_Their_20s",
+                "",
+                "",
+                ""
+            ],
+            "relevance": "medium",
+            "reason": "Discusses essential feature extraction of PPG signals using PSD and Detrended Fluctuation Analysis. While it involves PSD, it focuses on general feature extraction rather than intervals between fiducial points."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "title": "Prediction of ECG fiducial parameters from PPG signals for the analysis ...",
+            "content": "The previous studies explored, that heart rate variability assessed by PPG signals and ECG signals have a strong correlation [6]. Prominent dicrotic notch person's RR interval, PR, QRS, and QT interval can be better extracted from some fiducial features of PPG [7].",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "duckduckgo"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                6
+            ],
+            "score": 0.75,
+            "category": "general",
+            "url": "https://www.sciencedirect.com/science/article/abs/pii/S1746809423012715",
+            "engine": "duckduckgo",
+            "parsed_url": [
+                "https",
+                "www.sciencedirect.com",
+                "/science/article/abs/pii/S1746809423012715",
+                "",
+                "",
+                ""
+            ],
+            "relevance": "high",
+            "reason": "Directly mentions 'power spectral density (PSD)' and analyzes fiducial features of PPG related to intervals (RR, PR, QRS, QT)."
+        }
+    },
+    {
+        "web_info": {
+            "title": "A Robust PPG Signal Processing Pipeline for Biomarker Extraction and Analysis",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2025-04-11T00:00:00",
+            "pubdate": "2025-04-11 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                10,
+                10
+            ],
+            "score": 0.75,
+            "category": "science",
+            "template": "paper.html",
+            "content": "Photoplethysmography (PPG) is a non-invasive optical measurement method widely used for monitoring cardiovascular health. PPG signals provide a rich source of continuoustime data, valuable for various applications including circuit and system design, biomarker extraction, and physiological analysis. The availability of large datasets like the Medical Information Mart for Intensive Care III(MIMIC-III) dataset provides opportunities to develop advanced signal-processing algorithms for PPG data and offers great potential for artificial intelligence (AI) applications in healthcare. Recognizing the inherent variability in PPG signal quality, we present a comprehensive PPG signal processing pipeline designed to provide researchers with a tool for collecting and analyzing high-quality PPG data. The pipeline utilizes the MIMIC-III matched waveform dataset and the pyPPG Python toolbox. We demonstrate a workflow for PPG signal extraction, signal quality assessment using dynamic time wrapping-based (DTW) signal quality indexing (SQI), and fiducial point and biomarker extraction. The proposed pipeline provides researchers and developers with high-quality, labeled PPG segments and extracted features. We processed a total of 1.83 million (2.4 TB) PPG segments and successfully extracted 83,597 high-quality 60 -second segments (16 GB). For each signal segment, we extracted its fiducial points and a total of 102 pulse wave features using the pyPPG toolbox. We analyze the distributions of key biomarkers and discuss the pipeline's effectiveness. This work offers a standardized approach to signal processing that can enhance the reliability and efficiency of PPGbased health assessment tools and lay the foundation for future efforts in developing advanced algorithms for wearable health monitoring systems.",
+            "url": "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11045453",
+            "engine": "semantic scholar",
+            "parsed_url": [
+                "http",
+                "ieeexplore.ieee.org",
+                "/stamp/stamp.jsp",
+                "",
+                "tp=&arnumber=11045453",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2025-04-11T00:00:00"
+            },
+            "comments": "0 citations from the year 2025 to 2025",
+            "tags": [
+                "Medicine",
+                "Engineering",
+                "Computer Science"
+            ],
+            "type": "",
+            "authors": [
+                "Tianmin Kong",
+                "Ava Hedayatipour"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "2025 IEEE 18th Dallas Circuits and Systems Conference (DCAS)",
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": "10.1109/DCAS65331.2025.11045453",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "",
+            "html_url": "",
+            "relevance": "medium",
+            "reason": "Involves fiducial point detection and biomarker extraction, which may indirectly relate to intervals between fiducial points."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "title": "Spectral analysis for pulse rate variability assessment from ... - PMC",
+            "content": "9 dic 2022 ... Methods: PPG signals with varying and known PRV content were simulated, and PRV information was extracted from these signals. Several spectral ...",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0IEeWEEcF_cmVGYqQnWEJwgL6hhyAnd6zuFU1rUy7OrKGQv7ZRPhe5RQc",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "google cse"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                1
+            ],
+            "score": 0.75,
+            "category": "general",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9780434/",
+            "engine": "google cse",
+            "parsed_url": [
+                "https",
+                "pmc.ncbi.nlm.nih.gov",
+                "/articles/PMC9780434/",
+                "",
+                "",
+                ""
+            ],
+            "relevance": "high",
+            "reason": "Mentions spectral analysis for pulse rate variability (PRV) assessment, which aligns with PSD analysis of PPG signals."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "title": "Heart Rate Variability from Wearable Photoplethysmography Systems",
+            "content": "... analysis by PPG during sleep. The HIGHCARE-ALPS 2010 expedition provides us ... Optimal Fiducial Points for Pulse Rate Variability Analysis from Forehead and ...",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "google cse"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                20
+            ],
+            "score": 0.75,
+            "category": "general",
+            "url": "https://www.mdpi.com/1424-8220/22/8/2891",
+            "engine": "google cse",
+            "parsed_url": [
+                "https",
+                "www.mdpi.com",
+                "/1424-8220/22/8/2891",
+                "",
+                "",
+                ""
+            ],
+            "relevance": "high",
+            "reason": "Focuses on optimal fiducial points for pulse rate variability analysis, which inherently involves temporal intervals between fiducial points in PPG signals."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Effects of using different algorithms and fiducial points for the detection of interbeat intervals, and different sampling rates on the assessment of pulse rate variability from photoplethysmography",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2022-03-02T00:00:00",
+            "pubdate": "2022-03-02 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "openalex"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                7
+            ],
+            "score": 0.75,
+            "category": "science",
+            "template": "paper.html",
+            "content": "OBJECTIVE: Pulse Rate Variability (PRV) has been widely used as a surrogate of Heart Rate Variability (HRV). However, there are several technical aspects that may affect the extraction of PRV information from pulse wave signals such as the photoplethysmogram (PPG). The aim of this study was to evaluate the effects of changing the algorithm and fiducial points used for determining inter-beat intervals (IBIs), as well as the PPG sampling rate, from simulated PPG signals with known PRV content. METHODS: PPG signals were simulated using a proposed model, in which PRV information can be modelled. Two independent experiments were performed. First, 5 IBIs detection algorithms and 8 fiducial points were used for assessing PRV information from the simulated PPG signals, and time-domain and Poincaré plot indices were extracted and compared to the expected values according to the simulated PRV. The best combination of algorithms and fiducial points were determined for each index, using factorial designs. Then, using one of the best combinations, PPG signals were simulated with varying sampling rates. PRV indices were extracted and compared to the expected values using Student t-tests or Mann-Whitney U-tests. RESULTS: From the first experiment, it was observed that AVNN and SD2 indices behaved similarly, and there was no significant influence of the fiducial points used. For other indices, there were several combinations that behaved similarly well, mostly based on the detection of the valleys of the PPG signal. There were differences according to the quality of the PPG signal. From the second experiment, it was observed that, for all indices but SDNN, the higher the sampling rate the better. AVNN and SD2 showed no statistical differences even at the lowest evaluated sampling rate (32 Hz), while RMSSD, pNN50, S, SD1 and SD1/SD2 showed good performance at sampling rates as low as 128 Hz. CONCLUSION: The best combination of IBIs detection algorithms and fiducial points differs according to the application, but those based on the detection of the valleys of the PPG signal tend to show a better performance. The sampling rate of PPG signals for PRV analysis could be lowered to around 128 Hz, although it could be further lowered according to the application. SIGNIFICANCE: The standardisation of PRV analysis could increase the reliability of this signal and allow for the comparison of results obtained from different studies. The obtained results allow for a first approach to establish guidelines for two important aspects in PRV analysis from PPG signals, i.e. the way the IBIs are segmented from PPG signals, and the sampling rate that should be used for these analyses. Moreover, a model for simulating PPG signals with PRV information has been proposed, which allows for the establishing of these guidelines while controlling for other variables, such as the quality of the PPG signal.",
+            "url": "https://doi.org/10.1016/j.cmpb.2022.106724",
+            "engine": "openalex",
+            "parsed_url": [
+                "https",
+                "doi.org",
+                "/10.1016/j.cmpb.2022.106724",
+                "",
+                "",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2022-03-02T00:00:00"
+            },
+            "comments": "26 citations",
+            "tags": [
+                "Photoplethysmogram",
+                "Computer science",
+                "Fiducial marker",
+                "Sampling (signal processing)",
+                "Algorithm",
+                "Pulse (music)",
+                "Pulse rate",
+                "Artificial intelligence",
+                "Statistics",
+                "Real-time computing",
+                "Computer vision",
+                "Mathematics",
+                "Medicine",
+                "Telecommunications",
+                "Blood pressure",
+                "Radiology",
+                "Filter (signal processing)",
+                "Detector"
+            ],
+            "type": "article",
+            "authors": [
+                "Elisa Mejía‐Mejía",
+                "James M. May",
+                "P. A. Kyriacou"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "",
+            "volume": "218",
+            "pages": "106724-106724",
+            "number": null,
+            "doi": "10.1016/j.cmpb.2022.106724",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0169260722001109/pdf",
+            "html_url": "https://doi.org/10.1016/j.cmpb.2022.106724",
+            "relevance": "high",
+            "reason": "Directly addresses the task by analyzing interbeat intervals (IBIs) between fiducial points of PPG using spectral analysis techniques. The study evaluates algorithms and fiducial points for PRV extraction, involving power spectral density (PSD) analysis of intervals."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34310329/",
+            "title": "Impact of the PPG Sampling Rate in the Pulse Rate Variability Indices Evaluating Several Fiducial Points in Different Pulse Waveforms - PubMed",
+            "content": "The PPG sampling rate has been reduced by decimation, obtaining signals at 500 Hz, 250 Hz, 125 Hz, 100 Hz, 50 Hz and 25 Hz. Five fiducial points were computed: apex, up-slope, medium, line-medium and medium interpolate point.",
+            "publishedDate": null,
+            "thumbnail": "",
+            "engine": "brave",
+            "parsed_url": [
+                "https",
+                "pubmed.ncbi.nlm.nih.gov",
+                "/34310329/",
+                "",
+                "",
+                ""
+            ],
+            "img_src": "",
+            "priority": "",
+            "engines": [
+                "brave"
+            ],
+            "positions": [
+                16
+            ],
+            "score": 0.75,
+            "category": "general",
+            "relevance": "medium",
+            "reason": "Discusses fiducial points in PPG and their relation to pulse rate variability (PRV), though it does not explicitly mention power spectral density (PSD). Focuses on sampling rates and fiducial point computation, which provides context but lacks direct PSD analysis."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30669123/",
+            "title": "Optimal fiducial points for pulse rate variability analysis from forehead and finger photoplethysmographic signals - PubMed",
+            "content": "Main results: The middle-amplitude point of the PPG signal (n M ), the apex point of the first derivative ([Formula: see text]), and the tangent intersection point (n T ) are the most suitable fiducial points for PRV analysis, resulting in the lowest relative errors estimated between PRV and HRV indices and higher correlation coefficients and reliability indices.",
+            "publishedDate": "2019-02-26T00:00:00",
+            "thumbnail": "",
+            "engine": "brave",
+            "parsed_url": [
+                "https",
+                "pubmed.ncbi.nlm.nih.gov",
+                "/30669123/",
+                "",
+                "",
+                ""
+            ],
+            "img_src": "",
+            "priority": "",
+            "engines": [
+                "brave"
+            ],
+            "positions": [
+                1
+            ],
+            "score": 0.75,
+            "category": "general",
+            "pubdate": "2019-02-26 00:00:00",
+            "relevance": "medium",
+            "reason": "Addresses fiducial points for PRV analysis but does not mention power spectral density (PSD). Focuses on optimal fiducial point selection for PRV, which is related but lacks the specific technical requirement of PSD analysis."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "url": "https://www.academia.edu/127420426/Analysis_on_Four_Derivative_Waveforms_of_Photoplethysmogram_PPG_for_Fiducial_Point_Detection",
+            "title": "(PDF) Analysis on Four Derivative Waveforms of Photoplethysmogram (PPG) for Fiducial Point Detection",
+            "content": "The results indicate that the features of PPG signals of men and women using PSD and DFA were significantly different. In order to evaluate the results, a clustering analysis was applied to the results using K-means clustering technique. The clustering plots show that the features were well distributed into the two groups. ... The study identifies 12 reliable derivative markers for detecting fiducial points in PPG, VPG, and APG.",
+            "publishedDate": null,
+            "thumbnail": "",
+            "engine": "brave",
+            "parsed_url": [
+                "https",
+                "www.academia.edu",
+                "/127420426/Analysis_on_Four_Derivative_Waveforms_of_Photoplethysmogram_PPG_for_Fiducial_Point_Detection",
+                "",
+                "",
+                ""
+            ],
+            "img_src": "",
+            "priority": "",
+            "engines": [
+                "brave"
+            ],
+            "positions": [
+                3,
+                4
+            ],
+            "score": 0.75,
+            "category": "general",
+            "pubdate": "2022-06-30 00:00:00",
+            "relevance": "medium",
+            "reason": "Discusses derivative markers for fiducial point detection and clustering analysis, but does not mention power spectral density (PSD) or intervals between fiducial points. Focuses on morphology differences rather than temporal intervals."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Impact of the PPG Sampling Rate in the Pulse Rate Variability Indices Evaluating Several Fiducial Points in Different Pulse Waveforms",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2021-07-26T00:00:00",
+            "pubdate": "2021-07-26 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                1,
+                1
+            ],
+            "score": 0.75,
+            "category": "science",
+            "template": "paper.html",
+            "content": "The main aim of this work is to study the effect of the sampling rate of the photoplethysmographic (PPG) signal for pulse rate variability (PRV) analysis. Forehead and finger PPG signals were recorded at 1000 Hz during a rest state, with red and infrared wavelengths, simultaneously with the electrocardiogram (ECG). The PPG sampling rate has been reduced by decimation, obtaining signals at 500 Hz, 250 Hz, 125 Hz, 100 Hz, 50 Hz and 25 Hz. Five fiducial points were computed: apex, up-slope, medium, line-medium and medium interpolate point. The medium point is located in the middle of the up-slope of the pulse. The medium interpolate point is a new proposal as fiducial point that consider the abrupt up-slope of the PPG pulse, so it can be recovered by linear interpolation when the sampling rate is reduced. The error performed in the temporal location of the fiducial points was computed. Pulse period time interval series were obtained from all PPG signals and fiducial points, and compared with the RR intervals obtained from the ECG. Heart rate variability and PRV signals were estimated and classical time and frequency domain indices were computed. The results showed that the medium interpolate point of the PPG pulse was the most accurate fiducial point under different PPG morphologies and sensor locations, when sampling rate was reduced. Being able to reduce the sampling rate to 50 Hz without causing significant changes in time and frequency indices, when medium interpolate point was used as fiducial point.",
+            "url": "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9495237",
+            "engine": "semantic scholar",
+            "parsed_url": [
+                "http",
+                "ieeexplore.ieee.org",
+                "/stamp/stamp.jsp",
+                "",
+                "tp=&arnumber=9495237",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2021-07-26T00:00:00"
+            },
+            "comments": "33 citations from the year 2024 to 2026",
+            "tags": [
+                "Medicine",
+                "Engineering"
+            ],
+            "type": "",
+            "authors": [
+                "M. Peláez-Coca",
+                "Alberto Hernando",
+                "J. Lázaro",
+                "E. Gil"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "IEEE journal of biomedical and health informatics",
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": "10.1109/JBHI.2021.3099208",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "http://diec.unizar.es/~laguna/personal/publicaciones/Impact_of_the_PPG_sampling_rate_in_the_pulse_rate_variability_indices_evaluating_several_fiducial_points_in_different_pulse_waveforms.pdf",
+            "html_url": "",
+            "relevance": "high",
+            "reason": "Discusses fiducial points in PPG sampling for PRV indices and their relation to HRV spectral analysis."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Optimal Fiducial Points for Pulse Rate Variability Analysis from Forehead and Finger PPG Signals",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                2,
+                2
+            ],
+            "score": 0.75,
+            "category": "science",
+            "template": "paper.html",
+            "content": "Objective: The aim of this work is to evaluate and compare five fiducial points for the temporal location of each pulse wave from forehead and finger photoplethysmographic pulse waves signals (PPG) to perform pulse rate variability (PRV) analysis as a surrogate of heart rate variability (HRV) analysis. Approach: Forehead and finger PPG signals were recorded during tilt-table test simultaneously to the ECG. Artifacts were detected and removed and, five fiducial points were computed: apex, middle-amplitude and foot points of the PPG signal, apex point of the first derivative signal and, the intersection point of the tangent to the PPG waveform at the apex of the derivative PPG signal and the tangent to the foot of the PPG pulse defined as intersecting tangents method. Pulse period (PP) time intervals series were obtained from both PPG signals and compared to the RR intervals obtained from the ECG. Heart and pulse rate variability signals (HRV and PRV) were estimated and, classical time and frequency domain indices were computed. Main Results: The middle-amplitude point of the PPG signal (nM ), the apex point of the first derivative (nA), and the tangents intersection point (nT ) are the most suitable fiducial points for PRV analysis, which result in the lowest relative errors estimated between PRV and HRV indices, higher correlation coefficients and reliability indexes. Statistically significant differences according to the Wilcoxon test between PRV and HRV signals were found for the apex and foot fiducial points of the PPG, as well as the lowest agreement between RR and PP series according to Bland-Altman analysis. Hence, they have been considered less accurate for variability analysis. In addition, the relative errors are significantly lower for nM and n ∗ A features by using Friedman statistics with Bonferroni multiple-comparison test and, we propose nM as the most accurate fiducial point. Based on our results, forehead PPG seems to provide more reliable information for a PRV assessment than finger PPG. Significance: The accuracy of the pulse wave detections depends on the morphology of the PPG. There is therefore a need to widely define the most accurate fiducial point to perform a PRV analysis under non-stationary conditions based on different PPG sensor locations and signal acquisition techniques.",
+            "url": "https://zaguan.unizar.es/record/86512/files/texto_completo.pdf",
+            "engine": "semantic scholar",
+            "parsed_url": [
+                "https",
+                "zaguan.unizar.es",
+                "/record/86512/files/texto_completo.pdf",
+                "",
+                "",
+                ""
+            ],
+            "date_of_publication": null,
+            "comments": "2 citations from the year 2021 to 2023",
+            "tags": [
+                "Medicine"
+            ],
+            "type": "",
+            "authors": [
+                "Elena Peralta",
+                "J. Lázaro",
+                "R. Bailón",
+                "Vaidotas",
+                "Marozas",
+                "E. Gil"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": null,
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": null,
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "https://zaguan.unizar.es/record/86512/files/texto_completo.pdf",
+            "html_url": "",
+            "relevance": "high",
+            "reason": "Focuses on fiducial point selection for PRV analysis, discussing accuracy and algorithm impact on PPG-derived HRV."
+        }
+    },
+    {
+        "web_info": {
+            "template": "default.html",
+            "title": "Optimal fiducial points for pulse rate variability analysis from ...",
+            "content": "Abstract Objective: The aim of this work is to evaluate and compare five fiducial points for the temporal location of each pulse wave from forehead and finger photoplethysmographic (PPG) pulse wave signals to perform pulse rate variability (PRV) analysis as a surrogate for heart rate variability (HRV) analysis.",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "duckduckgo"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                10
+            ],
+            "score": 0.75,
+            "category": "general",
+            "url": "https://iopscience.iop.org/article/10.1088/1361-6579/ab009b/pdf",
+            "engine": "duckduckgo",
+            "parsed_url": [
+                "https",
+                "iopscience.iop.org",
+                "/article/10.1088/1361-6579/ab009b/pdf",
+                "",
+                "",
+                ""
+            ],
+            "relevance": "high",
+            "reason": "Analyzes algorithmic effects on PRV and mentions fiducial points as critical for PPG signal processing."
+        }
+    }
+]

@@ -1,5 +1,5 @@
 from copy import copy
-from numpy import asarray
+from numpy import asarray,argsort
 from llm.ollama import chat
 from agent.tools import (
     search_web,
@@ -7,6 +7,7 @@ from agent.tools import (
     SEARCH_WEB_TOOL,
     OPEN_WEBPAGE_TOOL,
 )
+from search.web import is_block_content
 from search.scoring import keyword_based_score
 from llm.tokens import count_tokens,adjust_max_tokens_results,json
 from config.config import task, cnf
@@ -15,27 +16,28 @@ class Workflow:
     def __init__(self):
         self.querys = list()
         self.total_web_history = set()
-        self.relevant_info_hystory = []
+        self.relevant_sources = []
     #
     def run(self):
-        self.analyze_question(task.research_task)
-        self.generate_query()
-        '''
+        self.analyze_task(task.research_task)
         info_insufficient = True
         i = 0
         while info_insufficient & (i<cnf.MAX_ITER):
             self.generate_query()
-            coded = self.search()
-            self.result_web_evaluator(coded)
+            restart = self.search()
+            if restart:
+                continue
+            self.result_web_evaluator()
             info_insufficient = self.evaluator_info()
             i+=1
-        '''
+        final = self.open_relevant_sources()
+        self.summary(final)
     #
-    def analyze_question(self,question : str):
-        print("\n[QUESTION ANALYZER] analysing question ...")
-        question += """\nRemember: the traduction task MUST be grammatically 
+    def analyze_task(self,task : str):
+        print("\n[TASK ANALYZER] analysing task ...")
+        task += """\nRemember: the traduction task MUST be grammatically 
             and orthographically correct in english."""
-        print(f"\t{count_tokens(cnf.TASK_ANALYZER_PROMPT+question)} tokens")
+        print(f"\t{count_tokens(cnf.TASK_ANALYZER_PROMPT+task)} tokens")
         messages = [
             {
                 "role": "system",
@@ -43,22 +45,30 @@ class Workflow:
             },
             {
                 "role": "user",
-                "content": question,
+                "content": task,
             },
         ]
         response = chat(messages,format=cnf.TASK_ANALYZER_SCHEMA)
         content = response["message"]["content"]
-        self.question_analysis = json.loads(content)
-        print("\n[QUESTION ANALYZER] Analysis:")
-        print(json.dumps(self.question_analysis, ensure_ascii=False,indent=2))
+        self.task_analysis = json.loads(content)
+        print("\n[task ANALYZER] Analysis:")
+        print(json.dumps(self.task_analysis, ensure_ascii=False,indent=2))
     #
     def generate_query(self):
         print("\n[QUERY GENERATOR] generating query ...")
-        content = self.question_analysis.copy()
-        content.pop("original_question", None)
+        content = self.task_analysis
+        content.pop("original_task", None)
         content.pop("language", None)
-        content = "\nQuestion analysis:\n"+json.dumps(content, ensure_ascii=False,indent=2)
-        content += "\nQueries:\n"+json.dumps(self.querys)
+        content.pop("domain", None)
+        content = "\ntask analysis:\n"+json.dumps(content, 
+                                                  ensure_ascii=False,indent=2)
+        content += "\nQueries:\n"+json.dumps([f'{i}: score = {q['score']} query: '+q['query'] 
+                                              for i,q in enumerate(self.querys)], 
+                                             ensure_ascii=False,indent=2)
+        content += "\nSearch terminology (from most relevant to less relevant): " + json.dumps(task.search_terms)
+        content += """\nRemember: If there are previous queries, you 
+        MUST generate a different query. Query MUST contain letters and numbers. 
+        Prioritize the most compact query possible and must relevant terminology."""
         print(f"\t{count_tokens(cnf.QUERY_GENERATOR_PROMPT+content)} tokens")
         messages = [
             {
@@ -87,20 +97,28 @@ class Workflow:
         for r in result:
             url = r["url"]
             if url not in self.total_web_history:
-                r['score'] = keyword_based_score(self.question_analysis['keywords'],r)
+                r['score'] = keyword_based_score(task.search_terms, r)
                 self.search_results.append(r)
                 self.total_web_history.add(url)
-        #
-        self.search_results,coded = adjust_max_tokens_results(self.search_results,cnf.RESULT_WEB_EVALUATOR_PROMPT)
+        # 
         print(f"\n[WEB SEARCH] {len(self.search_results)} new results were found.")
-        return coded
+        if len(self.search_results) == 0:
+            self.querys[-1]['score'] = 0
+            return True
+        else:
+            return False
     #
-    def result_web_evaluator(self,info:list):
+    def result_web_evaluator(self):
+        search_results,info,max_score = adjust_max_tokens_results(self.search_results,
+                                                                                cnf.RESULT_WEB_EVALUATOR_PROMPT)
+        self.search_results = search_results
+        self.querys[-1]['score'] = max_score
         print("\n[WEB EVALUATOR] evaluating posible sources ...")
-        content = "\nQuestion analysis:\n"+json.dumps(self.question_analysis['english_question'], ensure_ascii=False,indent=2)
+        prompt = cnf.RESULT_WEB_EVALUATOR_PROMPT.replace("[NSRC]",str(cnf.MAX_RELEVANT_SRC))
+        content = "\ntask analysis:\n"+json.dumps(self.task_analysis['english_task'], ensure_ascii=False,indent=2)
         content += "\nPosible web sources:\n"+json.dumps([f'{i}: '+txt for i,txt in enumerate(info)], 
                                                          ensure_ascii=False,indent=2)
-        content += """\nRemember: sources MUST have directly related with technical words of the question not
+        content += """\nRemember: sources MUST have directly related with technical words of the task not
         only related with the topic. The source that have exactly all the technical words in the answer 
         ist the highest relevance. If there is no relevent source you can return empty list [] and 
         by default, you MUST select the source with the highest score. Select valid index"""
@@ -108,32 +126,44 @@ class Workflow:
         messages = [
                     {
                         "role": "system",
-                        "content": cnf.RESULT_WEB_EVALUATOR_PROMPT,
+                        "content": prompt,
                     },
                     {
                         "role": "user",
                         "content": content,
                     },
                 ]
-        response = chat(messages,format=cnf.RESULT_WEB_EVALUATOR_SCHEMA)
+        format = copy(cnf.RESULT_WEB_EVALUATOR_SCHEMA)
+        format['items']['properties']['index']['maximum'] = len(info)-1
+        response = chat(messages,format=format)
         content = response["message"]["content"]
-        self.relevant_sources = json.loads(content)
-        self.relevant_sources = [self.search_results[int(c["index"])] for c in self.relevant_sources]
-        print(f"{json.dumps(self.relevant_sources)} \ntotal:{len(self.search_results)}")
-        print(f"\n[WEB EVALUATOR] I consider {len(self.relevant_sources)} relevant sources")
-        print(self.relevant_sources)
+        relevant_sources = json.loads(content)
+        #
+        l = []
+        for c in relevant_sources:
+            relevant = self.search_results[int(c["index"])]
+            relevant["relevance"] = c["relevance"]
+            relevant["reason"] = c["reason"]
+            l.append(relevant)
+        print(f"\n[WEB EVALUATOR] I consider {len(l)} relevant sources")
+        self.relevant_sources+=l
     #
     def evaluator_info(self):
         print("\n[EVIDENCE EVALUATOR] evaluting...")
-        content = json.dumps(['Title'+r['title']+r['content'] for r in self.relevant_sources],
+        # sort scores terminology
+        scoresk = asarray([r['score'] for r in self.relevant_sources])
+        i_scores = argsort(scoresk)
+        #
+        content = json.dumps(['Title: '+self.relevant_sources[i]['title']+ 'content: ' + self.relevant_sources[i]['content'] 
+                              for i in i_scores],
                              ensure_ascii=False,indent=2)
-        content += '\nKeywords: ' + json.dumps(self.question_analysis['keywords'],
+        content += '\nTask: ' + task.research_task
+        content += '\nSearch terminology: ' + json.dumps(task.search_terms,
                                                ensure_ascii=False,indent=2)
-        content += '\nSearch_terminology' + json.dumps(self.question_analysis['search_terminology'],
-                                                       ensure_ascii=False,indent=2)
         content += """\nRemember: You MUST prioritize evaluating the sources based on their ability 
-        to answer each aspect of the question."""
+        to answer each aspect of the task."""
         print(f"{count_tokens(cnf.EVIDENCE_EVALUATOR_PROMPT+content)} tokens")
+        #
         messages = [
                             {
                                 "role": "system",
@@ -148,113 +178,62 @@ class Workflow:
         evaluation = response["message"]["content"]
         evaluation = json.loads(evaluation)
         print(evaluation)
-        scoresk = asarray([r['score'] for r in self.relevant_sources])
-        n_scores = sum(scoresk>cnf.THRES_SCORE_KEYWORDS)
+        n_scores = sum(scoresk>cnf.THRES_SCORE_TERMS)
         score_eval = 0.4*max(scoresk)
-        score_eval += self.COVER[evaluation['coverage']]
-        score_eval += self.EVIDENCE[evaluation['evidence']]
-        score_eval += self.INFO[evaluation['information']]
-        print(f"score: {score_eval}")
-        self.relevant_info_hystory += self.relevant_sources
-        return (score_eval<cnf.THRES_SCORE_EVAL) | (n_scores > cnf.MIN_KEYWORDSCORE_SRCS)
+        score_eval += cnf.COVER[evaluation['coverage']]
+        score_eval += cnf.EVIDENCE[evaluation['evidence']]
+        score_eval += cnf.INFO[evaluation['information']]
+        print(f"Evidence score: {score_eval}")
+        print(n_scores)
+        return (score_eval<cnf.THRES_SCORE_EVAL) | (n_scores < cnf.MIN_TERMS_SCORE_SRCS)
     #
     def open_relevant_sources(self):
-        for r in self.relevant_sources:
-            source = self.search_results[int(r["index"])]
+        scoresk = asarray([r['score'] for r in self.relevant_sources])
+        i_scores = argsort(scoresk)
+        res = []
+        n=0
+        for k in range(i_scores.size-1,-1,-1):
+            i = i_scores[k]
+            r = self.relevant_sources[i]
+            '''
             try:
-                result = open_webpage(source['url'])
-                print(result)
-                if len(result) >= 1000:
-                    pass
+                page = open_webpage(r['url'])
+                if is_block_content(page):
+                    status = 'block_content'
                 else:
-                    pass
-            except Exception as e:
-                result = (
-                    f"The source could not be accessed.\n"
-                    f"URL: {source['url']}\n"
-                    f"Error: {str(e)}\n"
-                    f"Do not rely on this source. Try another relevant source."
-                )
+                    status = 'relevant'
+            except Exception:
+                page = ''
+                status = 'denied_access'
+            '''
+            res.append({'web_info':r})
+            n+=1
+            if n+1 >= cnf.MAX_SRC:
+                break
+        return res
     #
-
-
-'''
-def run(question: str):
-    #
-    messages = [
-        {
-            "role": "system",
-            "content": SYSTEM_PROMPT,
-        },
-        {
-            "role": "user",
-            "content": question,
-        }
-    ]
-    tools = [SEARCH_WEB_TOOL, OPEN_WEBPAGE_TOOL]
-    #
-    searched = False
-    opened_source = False
-    while True:
-
-        response = chat(messages, tools)
-
-        tool_calls = response["message"].get("tool_calls", [])
-
-        if not tool_calls:
-            if searched and not opened_source:
-                messages.append({
+    def summary(self,info:list):
+        print("[SUMMARY] creating...")
+        content = {}
+        for i in range(len(info)-1,-1,-1):
+            r = info[i]
+            content[i] = copy(r)
+        content = json.dumps(content,ensure_ascii=False,indent=2)
+        content += "\n" + cnf.ANSWER_PROMPT_FINAL
+        print(f'{count_tokens(cnf.ANSWER_PROMPT+content)} tokens')
+        #
+        messages = [
+            {
+                    "role": "system",
+                    "content": cnf.ANSWER_PROMPT,
+                },
+                {
                     "role": "user",
-                    "content": (
-                        "Has realizado una búsqueda, pero todavía no has "
-                        "abierto ninguna fuente. Abre al menos una fuente "
-                        "relevante antes de responder."
-                    ),
-                })
-                continue
-            return response["message"]["content"]
-
-        messages.append(response["message"])
-
-        for tool_call in tool_calls:
-
-            name = tool_call["function"]["name"]
-            arguments = tool_call["function"]["arguments"]
-            print(f"[AGENT] Ejecutando herramienta: {name}")
-            print(f"[AGENT] Argumentos: {arguments}")
-
-            if name == "search_web":
-
-                result = search_web(arguments["query"])
-                searched = True
-
-            elif name == "open_webpage":
-
-                try:
-                    result = open_webpage(arguments["url"])
-                    if len(result) >= 1000:
-                        opened_source = True
-                    else:
-                        result = (
-                            "The source could not be reliably extracted. "
-                            "Only a very small amount of content was retrieved. "
-                            "Do not use this source as evidence. Try another source."
-                        )
-                except Exception as e:
-                    result = (
-                        f"The source could not be accessed.\n"
-                        f"URL: {arguments['url']}\n"
-                        f"Error: {str(e)}\n"
-                        f"Do not rely on this source. Try another relevant source."
-                    )
-
-            else:
-
-                result = f"Herramienta desconocida: {name}"
-            print(f"[AGENT] Resultado obtenido: {len(str(result))} caracteres")
-            messages.append({
-                "role": "tool",
-                "tool_name": name,
-                "content": str(result),
-            })
-'''
+                    "content": content,
+            },
+            ]
+        response = chat(messages)
+        with open(f"/app/results/"+self.querys[0]['query']+'.txt', 
+                  "w", encoding="utf-8") as f:
+            f.write(response["message"]["content"]+5*"\n"+json.dumps(info,ensure_ascii=False,indent=4))
+        print(response["message"]["content"])

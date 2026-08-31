@@ -23,4 +23,5 @@ Actualizar y contruir:
 
 Actualizar y ejecutar:
     >> docker compose up -d --build research-agent
+    >> docker compose run --rm   --user "$(id -u):$(id -g)"   research-agent python main.p
     

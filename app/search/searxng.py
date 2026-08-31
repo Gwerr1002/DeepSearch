@@ -32,15 +32,17 @@ def search(query: str):
             )
     data = response.json()
     #
-    results = []
-    for result in data["results"]:
-        results.append({
-            "title": result.get("title"),
-            "url": result.get("url"),
-            "content": result.get("content"),
-            "publishedDate": result.get("publishedDate"),
-            "engines":result.get("engines"),
-            "category":result.get("category")
-        })
-    #
-    return results
+    """
+    results = ["results"]
+        for result in data["results"]:
+            results.append({
+                "title": result.get("title"),
+                "url": result.get("url"),
+                "content": result.get("content"),
+                "publishedDate": result.get("publishedDate"),
+                "engines":result.get("engines"),
+                "category":result.get("category")
+            })
+        #
+    """
+    return data["results"]

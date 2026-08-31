@@ -1,0 +1,29 @@
+# Busqueda o tarea a investigar
+research_task: >
+  Busca artículos en donde analicen series temporales descompuestas en 
+  magnitud y signo por medio del análisis de fluctuaciones sin tendencia (DFA)
+
+# Palabras que deben contener los sitios 
+# Escribir de la mas relevante a la menos relevante
+# Cada entrada es obligatoria, por entrada
+# pueden escribirse sinonimos o equivalencias separados por "," 
+# que se interpretarán como opcionales (OR)
+search_terms:
+  - DFA, detrended fluctuation analysis
+  - magnitude, sign, magnitude and sign, magnitude series, sign series
+
+search:
+  # Cantidad máxima de fuentes
+  max_results: 15
+  # Cantidad máxima de fuentes relevantes por búsqueda
+  max_relevant_sources_per_iteration : 5
+  # Cantidad máxima de queries evaluados
+  max_queries: 10
+
+evaluations:
+  # Umbral de score de relevancia
+  threshold_score_eval: 0.85
+  # Umbral de score de terminología
+  threshold_score_terms : 0.8
+  # Cantidad mínima necesaria de fuentes con que superan threshold_score_terms
+  min_term_score_sources : 3

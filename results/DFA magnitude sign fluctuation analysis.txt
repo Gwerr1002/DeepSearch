@@ -1,0 +1,365 @@
+Detrended fluctuation analysis (DFA) is widely used to study magnitude and sign correlations in time series data across diverse fields. In wind speed fluctuations, DFA reveals long-range positive correlations in magnitude sub-series, which weaken with decreasing sampling frequency, while short-range anti-correlations persist in sign sub-series regardless of sampling rates [1]. Similarly, in horizontal oil-water two-phase flow, magnitude and sign decomposition via DFA captures nonlinear and linear dynamics, respectively, enabling identification of flow patterns through scaling exponents [0]. These findings highlight the utility of separating time series into magnitude and sign components to distinguish nonlinear from linear properties.  
+
+In heart rate variability analysis, DFA applied to magnitude and sign series of RRI changes uncovers nonlinear components not detectable by traditional spectral methods. Multifractal DFA shows distinct scaling behaviors during sleep compared to wake states, with magnitude series reflecting critical nonlinear dynamics [3]. For magnetic and electric field variations preceding seismic rupture, DFA identifies long-range correlations in magnitude fluctuations (α ≈ 0.9) and scale-invariant features in electric fields (α ≈ 1), whereas sign spikes exhibit short-term randomness [2]. These studies collectively demonstrate that DFA provides insights into complex systems by quantifying correlations in magnitude and sign, with implications for applications like anemometer selection, clinical diagnostics, and geophysical monitoring.  
+
+Non-stationarity significantly impacts magnitude and sign scaling properties in vertical velocity increments. Stationary data show nonlinear correlations in magnitude and linear correlations in sign, while non-stationary data exhibit enhanced nonlinear behavior in sign series at larger scales, attributed to modulation by large-scale structures [1]. Such findings underscore the importance of accounting for non-stationarity in scaling analysis. Across all studies, DFA’s ability to decompose time series into magnitude and sign components offers a robust framework for characterizing dynamic systems, revealing correlations that traditional methods may miss.  
+
+References:  
+[1] M. Zeng et al., "Effects of sampling frequency on magnitude and sign correlations in small-scale wind speed fluctuations," *World Congress on Intelligent Control and Automation*, 2016. URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7578755, DOI: 10.1109/WCICA.2016.7578755  
+[2] P. A. Varotsos et al., "Detrended fluctuation analysis of the magnetic and electric field variations that precede rupture," *Chaos (Woodbury, N.Y.)*, 2009. URL: https://www.ncbi.nlm.nih.gov/pubmed/19566249, DOI: 10.1063/1.3130931  
+[3] P. Castiglioni et al., "Can the Detrended Fluctuation Analysis Reveal Nonlinear Components of Heart Rate Variability?" *Annual International Conference of the IEEE Engineering in Medicine and Biology Society*, 2019. URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8856945, DOI: 10.1109/EMBC.2019.8856945  
+[0] Li Zhu et al., "Magnitude and sign correlations in conductance fluctuations of horizontal oil water two-phase flow," *J. Phys.: Conf. Ser.*, 2012. URL: https://doi.org/10.1088/1742-6596/364/1/012067, DOI: 10.1088/1742-6596/364/1/012067
+
+
+
+
+[
+    {
+        "web_info": {
+            "title": "Magnitude and sign correlations in conductance fluctuations of horizontal oil water two-phase flow",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2012-05-28T00:00:00",
+            "pubdate": "2012-05-28 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "openalex"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                9
+            ],
+            "score": 1.0,
+            "category": "science",
+            "template": "paper.html",
+            "content": "In experiment we firstly define five typical horizontal oil-water flow patterns. Then we introduce an approach for analyzing signals by decomposing the original signals increment into magnitude and sign series and exploring their scaling properties. We characterize the nonlinear and linear properties of horizontal oil-water two-phase flow, which relate to magnitude and sign series respectively. We find that the joint distribution of different scaling exponents can effectively identify flow patterns, and the detrended fluctuation analysis (DFA) on magnitude and sign series can represent typical horizontal oil-water two-phase flow dynamics characteristics. The results indicate that the magnitude and sign decomposition method can be a helpful tool for characterizing complex dynamics of horizontal oil-water two-phase flow.",
+            "url": "https://doi.org/10.1088/1742-6596/364/1/012067",
+            "engine": "openalex",
+            "parsed_url": [
+                "https",
+                "doi.org",
+                "/10.1088/1742-6596/364/1/012067",
+                "",
+                "",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2012-05-28T00:00:00"
+            },
+            "comments": "10 citations",
+            "tags": [
+                "Magnitude (astronomy)",
+                "Sign (mathematics)",
+                "Scaling",
+                "Flow (mathematics)",
+                "Series (stratigraphy)",
+                "Nonlinear system",
+                "Phase (matter)",
+                "Two-phase flow",
+                "Detrended fluctuation analysis",
+                "Mechanics",
+                "Mathematics",
+                "Geology",
+                "Physics",
+                "Geometry",
+                "Mathematical analysis",
+                "Astronomy",
+                "Quantum mechanics",
+                "Paleontology"
+            ],
+            "type": "conference-paper",
+            "authors": [
+                "Li Zhu",
+                "Ning Jin",
+                "Zhongke Gao",
+                "Yanbing Zong",
+                "Lusheng Zhai",
+                "Zhuang Wang"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "",
+            "volume": "364",
+            "pages": "012067-012067",
+            "number": null,
+            "doi": "10.1088/1742-6596/364/1/012067",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/364/1/012067/pdf",
+            "html_url": "https://doi.org/10.1088/1742-6596/364/1/012067",
+            "relevance": "high",
+            "reason": "Examines magnitude and sign correlations in conductance fluctuations with DFA, aligning with the task."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Effects of non-stationarity on the magnitude and sign scaling in the multi-scale vertical velocity increment",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2014-09-15T00:00:00",
+            "pubdate": "2014-09-15 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                5,
+                5
+            ],
+            "score": 1.0,
+            "category": "science",
+            "template": "paper.html",
+            "content": "Abstract We study the scaling properties of multi-scale increment series from the stationary and non-stationary vertical velocity records by the detrended fluctuation analysis (DFA) and series decomposition methods, and show the impact of non-stationarity on the magnitude and sign scaling properties. Firstly, we show it is difficult to define a significant scaling range for stationary records themselves. Secondly, for increment series with lag one, the nonlinear correlation found in magnitude fluctuation (i.e. volatility fluctuation) is obvious for both cases. And over the smaller scale range, the linear correlation found usually in the sign series is the same for both cases. However, over the larger scale range, the difference is sharp and marked nonlinear correlation is also incorporated for the non-stationary sign series. Thirdly, with the lags in increment increasing, there exist two scaling ranges in both the magnitude and sign fluctuations. The nonlinear correlation in the magnitude series over both small and large scale ranges decreases with the lags increasing. For the sign series, the linear correlation is dominant over both small and large scale ranges for stationary case; however, the nonlinear correlation can be found over the large scale ranges for non-stationary case and will decrease with lags increasing. The nonlinear correlation found in the sign series over large-scale range is resulted from the modulation of the large scale structures found in the non-stationary data, which will incorporate parts of the magnitude information into the sign series.",
+            "url": "https://doi.org/10.1016/J.PHYSA.2014.05.004",
+            "engine": "semantic scholar",
+            "parsed_url": [
+                "https",
+                "doi.org",
+                "/10.1016/J.PHYSA.2014.05.004",
+                "",
+                "",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2014-09-15T00:00:00"
+            },
+            "comments": "18 citations from the year 2023 to 2025",
+            "tags": [
+                "Environmental Science",
+                "Physics"
+            ],
+            "type": "",
+            "authors": [
+                "Qinglei Li",
+                "Zuntao Fu",
+                "N. Yuan",
+                "Fenghua Xie"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "Physica A-statistical Mechanics and Its Applications",
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": "10.1016/J.PHYSA.2014.05.004",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "http://faculty.pku.edu.cn/_tsf/00/0C/vEziIr3qEzim.pdf",
+            "html_url": "",
+            "relevance": "high",
+            "reason": "Focuses on non-stationarity effects in magnitude/sign scaling using DFA, directly addressing the task."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Detrended fluctuation analysis of the magnetic and electric field variations that precede rupture.",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": null,
+            "pubdate": "",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "pubmed",
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                4,
+                4,
+                4
+            ],
+            "score": 1.0,
+            "category": "science",
+            "template": "paper.html",
+            "content": "Magnetic field variations are detected before rupture in the form of \"spikes\" of alternating sign. The distinction of these spikes from random noise is of major practical importance since it is easier to conduct magnetic field measurements than electric field ones. Applying detrended fluctuation analysis (DFA), these spikes look to be random at short time lags. On the other hand, long-range correlations prevail at time lags larger than the average time interval between consecutive spikes with a scaling exponent alpha around 0.9. In addition, DFA is applied to recent preseismic electric field variations in long duration (several hours to a couple of days) and reveals a scale invariant feature with an exponent alpha approximately 1 over all scales available (around five orders of magnitude).",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/19566249",
+            "engine": "pubmed",
+            "parsed_url": [
+                "https",
+                "www.ncbi.nlm.nih.gov",
+                "/pubmed/19566249",
+                "",
+                "",
+                ""
+            ],
+            "date_of_publication": null,
+            "comments": "",
+            "tags": [],
+            "type": "",
+            "authors": [
+                "P A Varotsos",
+                "N V Sarlis",
+                "E S Skordas"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "Chaos (Woodbury, N.Y.)",
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": "10.1063/1.3130931",
+            "issn": [
+                "1089-7682"
+            ],
+            "isbn": [],
+            "pdf_url": "",
+            "html_url": "",
+            "relevance": "high",
+            "reason": "Analyzes magnitude and sign fluctuations using DFA in magnetic/electric field data, directly relevant."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Can the Detrended Fluctuation Analysis Reveal Nonlinear Components of Heart Rate Variabilityƒ",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2019-07-01T00:00:00",
+            "pubdate": "2019-07-01 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                2,
+                2
+            ],
+            "score": 1.0,
+            "category": "science",
+            "template": "paper.html",
+            "content": "The Detrended Fluctuation Analysis (DFA) is widely employed to quantify the fractal dynamics of R-R intervals (RRI). This is usually done by estimating a short- and a long-term coefficient, but it is still unclear how much the information provided by such a bi-scale DFA is independent of that of traditional spectral indices. However, more sophisticated DFA approaches have been recently proposed, including the multifractal-multiscale DFA and the DFA for magnitude and sign of RRI changes. The aim of our work is to investigate whether novel DFA approaches allow extracting the information on the nonlinear RRI dynamics that traditional spectral methods cannot retrieve.We selected 4-hour segments of beat-by-beat RRI series from a 24-hour Holter recording, one during daytime (wake), one at night (sleep) in a healthy volunteer. From the wake segment, we generated 100 surrogate series shuffling the phases but preserving the power spectrum, and then from each of the resulting RRI series, we generated the series of the sign and the series of the magnitude of successive RRI changes. We generated similar series from the sleep recording. Thus, we finally obtained 6 original beat-to-beat series to be compared with 600 surrogate series, each of 4-hour duration.The comparison between original and surrogate series showed that for this experimental setting, the traditional monofractal DFA provides the same information retrievable by the power spectrum. However, specific components of the multifractal DFA reveal information not detectable by the power spectrum, particularly in the sleep condition. Furthermore, the DFA of the magnitude of RRI changes reflects important nonlinear components. Therefore, these more sophisticated DFA approaches might effectively improve the clinical value of RRI variability analysis.",
+            "url": "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8856945",
+            "engine": "semantic scholar",
+            "parsed_url": [
+                "http",
+                "ieeexplore.ieee.org",
+                "/stamp/stamp.jsp",
+                "",
+                "tp=&arnumber=8856945",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2019-07-01T00:00:00"
+            },
+            "comments": "5 citations from the year 2023 to 2025",
+            "tags": [
+                "Medicine"
+            ],
+            "type": "",
+            "authors": [
+                "P. Castiglioni",
+                "G. Parati",
+                "A. Faini"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": "10.1109/EMBC.2019.8856945",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "https://www.ncbi.nlm.nih.gov/pubmed/31947295",
+            "html_url": "",
+            "relevance": "high",
+            "reason": "Discusses DFA applied to magnitude and sign decomposition in heart rate variability, matching the task."
+        }
+    },
+    {
+        "web_info": {
+            "title": "Effects of sampling frequency on magnitude and sign correlations in small-scale wind speed fluctuations",
+            "img_src": "",
+            "iframe_src": "",
+            "audio_src": "",
+            "thumbnail": "",
+            "publishedDate": "2016-06-01T00:00:00",
+            "pubdate": "2016-06-01 00:00:00",
+            "length": null,
+            "views": "",
+            "author": "",
+            "metadata": "",
+            "priority": "",
+            "engines": [
+                "semantic scholar"
+            ],
+            "open_group": false,
+            "close_group": false,
+            "positions": [
+                3,
+                3
+            ],
+            "score": 1.0,
+            "category": "science",
+            "template": "paper.html",
+            "content": "The magnitude and sign of a time series measured from physical process contain rich information about the dynamical mechanisms. In this paper, we study the scaling properties of the magnitude and the sign from the small-scale wind speed fluctuations using the detrended fluctuation analysis (DFA), and show the impact of sampling frequency on their scaling properties. We find long-range positive correlations in the magnitude sub-series, which are weaker as sampling frequency decreases. In contrast, we find short-range anti-correlations in sign sub-series, which are almost the same under different sampling frequencies. Since the magnitude series relates to the nonlinear properties of the original time series and the sign series relates to the linear properties, our findings suggest that the nonlinearity of the wind speed gradually loses with the sampling frequency decreasing. These results yield deep insight into the dynamic behaviors underlying the small-scale wind records, and would be particularly helpful in appropriate anemometer selection applications.",
+            "url": "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7578755",
+            "engine": "semantic scholar",
+            "parsed_url": [
+                "http",
+                "ieeexplore.ieee.org",
+                "/stamp/stamp.jsp",
+                "",
+                "tp=&arnumber=7578755",
+                ""
+            ],
+            "date_of_publication": {
+                "datetime": "2016-06-01T00:00:00"
+            },
+            "comments": "0 citations from the year 2023 to 2025",
+            "tags": [
+                "Environmental Science",
+                "Physics"
+            ],
+            "type": "",
+            "authors": [
+                "M. Zeng",
+                "Xiao-Nei Zhang",
+                "Jinghai Li",
+                "Qing-Hao Meng"
+            ],
+            "editor": "",
+            "publisher": "",
+            "journal": "World Congress on Intelligent Control and Automation",
+            "volume": "",
+            "pages": "",
+            "number": "",
+            "doi": "10.1109/WCICA.2016.7578755",
+            "issn": [],
+            "isbn": [],
+            "pdf_url": "",
+            "html_url": "",
+            "relevance": "high",
+            "reason": "Directly addresses decomposition of time series into magnitude and sign, using DFA to analyze fluctuation without trend."
+        }
+    }
+]

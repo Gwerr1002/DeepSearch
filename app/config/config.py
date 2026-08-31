@@ -1,29 +1,33 @@
 import yaml
+from re import split
 
 class UsrDefined:
     def _load_content(self):
-        with open("research_task.yml", "r", encoding="utf-8") as f:
+        with open("/app/research_task.yml", "r", encoding="utf-8") as f:
             config = yaml.safe_load(f)
         self.research_task = config['research_task']
-        self.keywords = config['keywords']
+        self.search_terms = [split(r"\s*,\s*",st.lower())
+                             for st in config['search_terms']]
         return config['search'], config['evaluations']
 
 class Config:
     def __init__(self,usr : UsrDefined):
-        self.usr_constants(*usr._load_content())
-        self.promt_related()
+        self._usr_constants(*usr._load_content())
+        self._promt_related()
+        self._rubrik_evaluations()
+        self._web_block_patterns()
     #
-    def usr_constants(self,search,eval):
+    def _usr_constants(self,search,eval):
         # Search
         self.MAX_SRC = search['max_results']
         self.MAX_RELEVANT_SRC = search['max_relevant_sources_per_iteration']
         self.MAX_ITER = search['max_queries']
         # Evaluations
-        self.THRES_SCORE_EVAL = eval['threshold_socre_eval']
-        self.THRES_SCORE_KEYWORDS = eval['threshold_score_keywords']
-        self.MIN_KEYWORDSCORE_SRCS = eval['min_keyword_score_sources']
+        self.THRES_SCORE_EVAL = eval['threshold_score_eval']
+        self.THRES_SCORE_TERMS = eval['threshold_score_terms']
+        self.MIN_TERMS_SCORE_SRCS = eval['min_term_score_sources']
     #
-    def promt_related(self):
+    def _promt_related(self):
         from config import syspromt
         # TASK
         self.TASK_ANALYZER_PROMPT = syspromt.TASK_ANALYZER_PROMPT
@@ -37,8 +41,11 @@ class Config:
         # EVIDENCE EVALUATOR
         self.EVIDENCE_EVALUATOR_PROMPT = syspromt.EVIDENCE_EVALUATOR_PROMPT
         self.EVIDENCE_EVALUATOR_SCHEMA = syspromt.EVIDENCE_EVALUATOR_SCHEMA
+        # SUMMARY
+        self.ANSWER_PROMPT = syspromt.ANSWER_PROMPT
+        self.ANSWER_PROMPT_FINAL = syspromt.ANSWER_PROMPT_FINAL
     #
-    def rubrik_evaluations(self):
+    def _rubrik_evaluations(self):
         #
         self.COVER = {
             "NONE" : 0, 
@@ -59,6 +66,20 @@ class Config:
             "RELATED" : 0.075, 
             "COMPLEMENTARY" : 0.15
             }
+    #
+    def _web_block_patterns(self):
+        self.BLOCK_PATTERNS = [
+            "cookies must be enabled",
+            "verify you are human",
+            "prove you are human",
+            "access denied",
+            "request blocked",
+            "bot verification",
+            "robot check",
+            "captcha",
+            "recaptcha",
+            "hcaptcha",
+        ]
 
 task = UsrDefined()
 cnf = Config(task)

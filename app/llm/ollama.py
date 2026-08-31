@@ -31,6 +31,9 @@ def chat(
         "model": MODEL,
         "messages": messages,
         "stream": False,
+        "options": {
+            "num_ctx": 13000,
+        },
     }
     #
     if tools:

@@ -12,7 +12,8 @@ def count_tokens(text: str) -> int:
 def adjust_max_tokens_results(results:list,base:str):
     ntokens = count_tokens(base)
     i_scores = argsort([r['score'] for r in results],descending=True)
-    print(f"highest score {results[i_scores[0]]['score']}")
+    max_score = results[i_scores[0]]['score']
+    print(f"highest keyword-score {max_score}")
     util,i = [],0
     coded = []
     while (ntokens<=TOKEN_LIMIT) & (i < i_scores.size):
@@ -24,5 +25,5 @@ def adjust_max_tokens_results(results:list,base:str):
         util.append(results[j])
         i+=1
     print(f"\n[WEB SEARCH] {ntokens} tokens in info.")
-    return util[::-1],coded[::-1]
+    return util[::-1],coded[::-1],max_score
 

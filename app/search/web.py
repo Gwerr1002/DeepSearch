@@ -1,6 +1,7 @@
 import httpx
 import pymupdf
 from bs4 import BeautifulSoup
+from config.config import cnf
 
 def clean_text(soup):
     for element in soup([
@@ -21,24 +22,12 @@ def clean_text(soup):
     #
     return soup.get_text(separator=" ", strip=True)
 
-"""
-def fetch(url: str) -> str:
-    #
-    response = httpx.get(
-        url,
-        timeout=30,
-        follow_redirects=True,
-        headers={
-            "User-Agent": "Mozilla/5.0"
-        },
-    )
-    response.raise_for_status()
-    #
-    soup = BeautifulSoup(response.text, "html.parser")
-    text = clean_text(soup)
-    #
-    return text[:20000]
-"""
+def is_block_content(self,txt:str):
+    txt = txt.lower()
+    for w in cnf.BLOCK_PATTERNS:
+        if w in txt:
+            return True
+    return False
 
 def fetch(url):
     #
@@ -71,5 +60,4 @@ def fetch(url):
     )
     #
     return soup.get_text(separator=" ",
-        strip=True
-    )[:20000]
+        strip=True)[:20000]

@@ -4,6 +4,10 @@ services:
     build: .
     container_name: research-agent
 
+    environment:
+      HOME: /app/home
+      HF_HOME: /app/home/.cache/huggingface
+
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -11,7 +15,9 @@ services:
       - "8000:8000"
 
     volumes:
-      - huggingface_cache:/root/.cache/huggingface
+      - huggingface_cache:/app/home/.cache/huggingface
+      - ./results:/app/results
+      - ./research_task.yml:/app/research_task.yml:ro
 
   searxng:
     image: searxng/searxng:latest
@@ -22,7 +28,6 @@ services:
 
     volumes:
       - ./searxng/settings.yml:/etc/searxng/settings.yml:ro
-
 
 volumes:
   huggingface_cache:
